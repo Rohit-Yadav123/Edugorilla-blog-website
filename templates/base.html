@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+{% include "head.html" %}
+
+
+<body style="background-color: springgreen;">
+
+    {% include 'header.html' %}
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li>{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% block content %}
+    {% endblock content %}
+
+    {% include 'footer.html' %}
+
+<h3 style="text-align: center; margin-top:auto;">This Blog Project is designed by <h2 style="text-align: center ; color: red;">Rohit Kumar Yadav</h2></h3>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Edugorilla</title>
+    <style>
+      #cutim{
+        width: 180px;
+        height: 30px;
+      }
+      #k{
+        height: auto;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <nav id='k' class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/"><img id="cutim" src="https://edugorilla.com/wp-content/uploads/2016/10/logo-1.png" alt=""></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/blog">Blog</a>
+      </li>
+      
+      <li class="nav-item active">
+        <a class="nav-link " href="{% url 'post-create' %}" >Create</a>
+      </li>
+	  <li class="nav-item active">
+        <a class="nav-link " href="#" >ContactUs</a>
+      </li>
+    
+      
+	
+<!--              login and signup buttons-->
+
+</ul>
+          {% if user.is_authenticated %}
+          <div class="nav-item "><a href="" class="nav-link" style="color:red"><strong>Hello, {{user.first_name}}  {{user.last_name}}</strong> </a></div>
+
+          <div align='center'><a href="/blog/logout"><button type="button" class="btn btn-success ">logout</button></a></div>
+          {% else %}
+        
+          <div align='center'><a href="/blog/register"><button type="button" class="btn btn-success mr-sm-2 ">Signup</button></a>
+          <a href="/blog/login"><button type="button" class="btn btn-success my-2 my-sm-0  ">login</button></a></div>
+          {% endif %}
+
+     
+		
+		{% comment %} <ul class="langs navbar-text"><a href="#" class="active">EN</a><span>           </span><a href="#">ES</a></ul> {% endcomment %}
+       </nav>   
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
